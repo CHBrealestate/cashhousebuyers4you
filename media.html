@@ -243,7 +243,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- Inline Lead Capture CTA -->
-<section style="margin:48px 0;">
+<section id="lead-form" style="margin:48px 0;">
   <div class="container">
     <div style="max-width:760px;margin:0 auto;padding:32px;background:#F8F8F8;border-radius:12px;">
       <h2 style="margin:0 0 8px 0;">Get Your Cash Offer in 24 Hours</h2>
@@ -288,5 +288,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
+<!-- Sticky Mobile CTA -->
+<div class="sticky-mobile-cta" id="sticky-cta">
+  <a href="tel:4704866600" class="sticky-phone" onclick="window.dataLayer&&dataLayer.push({event:'cta_click',cta_position:'sticky_mobile',cta_type:'call'})">&#128222; Call</a>
+  <a href="#lead-form" class="sticky-form" onclick="window.dataLayer&&dataLayer.push({event:'cta_click',cta_position:'sticky_mobile',cta_type:'form'})">Get My Cash Offer &#8594;</a>
+</div>
+<style>
+.sticky-mobile-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:2px solid #C00000;padding:12px 16px;display:none;z-index:9999;box-shadow:0 -4px 12px rgba(0,0,0,0.1);}
+.sticky-mobile-cta a{display:inline-block;padding:10px 16px;font-weight:700;text-decoration:none;border-radius:6px;text-align:center;}
+.sticky-phone{color:#C00000;border:2px solid #C00000;margin-right:8px;}
+.sticky-form{background:#C00000;color:#fff;flex:1;}
+@media (min-width:768px){.sticky-mobile-cta{display:none !important;}}
+</style>
+<script>
+(function(){window.addEventListener("scroll",function(){var h=document.body.scrollHeight-window.innerHeight;var sc=h>0?(window.scrollY/h)*100:0;var s=document.getElementById("sticky-cta");if(s){s.style.display=(sc>25&&window.innerWidth<768)?"flex":"none";}});})();
+</script>
+<!-- End Sticky Mobile CTA -->
 </body>
 </html>
