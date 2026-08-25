@@ -37,6 +37,39 @@
     }
   }
 
+  function bindFormValidation() {
+    // Block empty / whitespace-only submissions before they reach Netlify.
+    // Runs before form tracking so blocked submits don't fire generate_lead.
+    const forms = document.querySelectorAll(
+      'form[data-netlify="true"], form.lead-form'
+    );
+    forms.forEach((form) => {
+      form.addEventListener("submit", (event) => {
+        let firstInvalid = null;
+        form.querySelectorAll("[required]").forEach((field) => {
+          if (!firstInvalid && (!field.value || !field.value.trim())) {
+            firstInvalid = field;
+          }
+        });
+        // Honeypot: if a bot filled the hidden field, drop the submit.
+        const honey = form.querySelector('[name="bot-field"]');
+        const honeyFilled = honey && honey.value && honey.value.trim();
+        if (firstInvalid || honeyFilled) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          if (firstInvalid) {
+            if (typeof firstInvalid.reportValidity === "function") {
+              firstInvalid.reportValidity();
+            } else {
+              firstInvalid.focus();
+            }
+          }
+          return false;
+        }
+      });
+    });
+  }
+
   function bindFormTracking() {
     const forms = document.querySelectorAll("form");
     forms.forEach((form) => {
@@ -80,6 +113,7 @@
   }
 
   loadGa4();
+  bindFormValidation();
   bindFormTracking();
   bindPhoneClickTracking();
   bindToolCompletionTracking();
