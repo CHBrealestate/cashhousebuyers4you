@@ -1,5 +1,8 @@
 # Task briefs / internal docs — not part of the site
 *.docx
 
+# Incoming copy/assets from Flor — staging only, not deployed as-is
+context-folder/
+
 # macOS
 .DS_Store
