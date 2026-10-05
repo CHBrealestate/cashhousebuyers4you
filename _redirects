@@ -36,3 +36,17 @@
 /wp-json/*                     /                  410
 /xmlrpc.php                    /                  410
 /wp-login.php                  /                  410
+
+# --- Legacy 404s from Search Console (added Oct 2026) ---
+/how-does-foreclosure-work-in-georgia/                               /articles/stop-fulton-county-foreclosure-auction.html   301
+/im-relocating-and-need-to-sell-my-house-in-georgia/                 /atlanta                                                301
+/selling-your-house-for-cash-in-georgia-our-cash-for-houses-program/ /atlanta                                                301
+/go-stop-foreclosure/                                                /articles/stop-fulton-county-foreclosure-auction.html   301
+/go-selling-to-a-professional/                                       /options-to-sell                                        301
+/how-we-buy-houses/                                                  /how-it-works                                           301
+/reviews/                                                            /                                                       301
+/tos/                                                                /terms                                                  301
+
+# Our own path errors (wrong paths that leaked into Search Console)
+/articles/media.html                                                 /media                                                  301
+/articles/oklahoma-city.html                                         /oklahoma-city                                          301
