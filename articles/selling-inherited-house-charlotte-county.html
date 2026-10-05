@@ -228,7 +228,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <p>If you discover that the home requires extensive repairs, you must decide whether the estate has the liquid cash to fix the property before listing, or if you need to explore alternative paths. Many families choose <a href="/articles/selling-house-charlotte-county.html">selling a house in Charlotte County</a> as-is to an investor rather than fronting $20,000 for a new roof out of pocket.</p>
 
-      <p>Furthermore, Charlotte County is highly vulnerable to tropical weather. If the inherited property sustained damage during a recent storm, managing insurance claims from afar is exhausting. This is a common challenge across the Gulf Coast. We frequently work with families who are <a href="/articles/selling-storm-damaged-brooksville-home.html">selling a storm-damaged Brooksville home</a>, or executors wondering if they can <a href="/can-you-sell-a-hurricane-damaged-home-in-new-port-richey-for-cash.html">sell a hurricane-damaged home in New Port Richey for cash</a>. We also help heirs <a href="/articles/sell-hurricane-damaged-house-tampa-bay.html">sell a hurricane-damaged house in Tampa Bay</a> without requiring them to complete the FEMA mitigation process first.</p>
+      <p>Furthermore, Charlotte County is highly vulnerable to tropical weather. If the inherited property sustained damage during a recent storm, managing insurance claims from afar is exhausting. This is a common challenge across the Gulf Coast. We frequently work with families who are <a href="/articles/selling-storm-damaged-brooksville-home.html">selling a storm-damaged Brooksville home</a>, or executors wondering if they can <a href="/articles/can-you-sell-a-hurricane-damaged-home-in-new-port-richey-for-cash.html">sell a hurricane-damaged home in New Port Richey for cash</a>. We also help heirs <a href="/articles/sell-hurricane-damaged-house-tampa-bay.html">sell a hurricane-damaged house in Tampa Bay</a> without requiring them to complete the FEMA mitigation process first.</p>
 
       <h2>Handling Out-of-State Inheritance and Multiple Heirs</h2>
       <p>Probate becomes significantly more complicated when the heirs live outside of Florida. Managing a vacant property, fielding calls from real estate agents, and coordinating with a local Charlotte County probate attorney from a thousand miles away is a heavy burden.</p>
@@ -324,9 +324,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   (function(){
     var f=document.getElementById("inline-wv6vGKBiU2HP7FmeY1Ce");
     if(!f)return;
-    var q=new URLSearchParams(window.location.search),ref="";
-    try{ref=document.referrer?new URL(document.referrer).hostname:"";}catch(e){}
-    var p=new URLSearchParams({utm_source:q.get("utm_source")||"",utm_medium:q.get("utm_medium")||"",referrer_domain:ref,landing_page_url:window.location.href});
+    var SELF="cashhousebuyers4you.com",store;
+    try{store=window.sessionStorage;}catch(e){store=null;}
+    function g(k){try{return store?store.getItem(k):null;}catch(e){return null;}}
+    if(store && !g("attr_captured")){
+      try{
+        var r0="";try{r0=document.referrer?new URL(document.referrer).hostname:"";}catch(e){}
+        if(r0 && r0.indexOf(SELF)!==-1) r0="";
+        var q0=new URLSearchParams(window.location.search);
+        store.setItem("orig_referrer",r0);store.setItem("orig_utm_source",q0.get("utm_source")||"");
+        store.setItem("orig_utm_medium",q0.get("utm_medium")||"");store.setItem("orig_landing",window.location.href);
+        store.setItem("attr_captured","1");
+      }catch(e){}
+    }
+    var utmS,utmM,refD,land;
+    if(store && g("attr_captured")){
+      utmS=g("orig_utm_source")||"";utmM=g("orig_utm_medium")||"";refD=g("orig_referrer")||"";land=g("orig_landing")||window.location.href;
+    }else{
+      var q=new URLSearchParams(window.location.search),rl="";
+      try{rl=document.referrer?new URL(document.referrer).hostname:"";}catch(e){}
+      if(rl && rl.indexOf(SELF)!==-1) rl="";
+      utmS=q.get("utm_source")||"";utmM=q.get("utm_medium")||"";refD=rl;land=window.location.href;
+    }
+    var p=new URLSearchParams({utm_source:utmS,utm_medium:utmM,referrer_domain:refD,landing_page_url:land});
     f.src="https://api.leadconnectorhq.com/widget/form/wv6vGKBiU2HP7FmeY1Ce?"+p.toString();
   })();
   </script>
